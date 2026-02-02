@@ -1,0 +1,57 @@
+*&---------------------------------------------------------------------*
+*& Include          ZSH08402_TOP
+*&---------------------------------------------------------------------*
+
+TABLES : ZS4H084T04, ZS4H084T05 .
+
+DATA : BEGIN OF GS_DISPLAY,
+         BCAT_TEXT TYPE ZS4H084T01-BCAT_TEXT,     " 도서분류
+         BCODE     TYPE ZS4H084T01-BCODE,
+         BNAME     TYPE ZS4H084T02-BNAME,        " 도서명
+         AUTHOR    TYPE ZS4H084T02-AUTHOR,      " 저자
+         PUBLISHER TYPE ZS4H084T02-PUBLISHER,    " 출판사
+         ISBN      TYPE C LENGTH 16,             " ISBN
+         CUST_NAME TYPE ZS4H084T04-CUST_NAME,    " 대여자
+         CUST_ID   TYPE ZS4H084T04-CUST_ID,
+         RDATE     TYPE ZS4H084T05-RDATE,        " 대여일
+         STATUS    TYPE C LENGTH 1,              " 연체여부
+         RTDUE     TYPE ZS4H084T05-RTDUE,        " 반납기한
+         RTDATE    TYPE ZS4H084T05-RTDATE,       " 반납일
+         GT_SCOL   TYPE LVC_T_SCOL,
+       END OF GS_DISPLAY.
+DATA GT_DISPLAY LIKE TABLE OF GS_DISPLAY.
+
+DATA : BEGIN OF GS_POPUP,
+         BNAME     TYPE ZS4H084T02-BNAME,        " 도서명
+         AUTHOR    TYPE ZS4H084T02-AUTHOR,      " 저자
+         PUBLISHER TYPE ZS4H084T02-PUBLISHER,    " 출판사
+         CUST_NAME TYPE ZS4H084T04-CUST_NAME,    " 대여자
+         CUST_ID   TYPE ZS4H084T04-CUST_ID,
+         RDATE     TYPE ZS4H084T05-RDATE,        " 대여일
+         RTDATE    TYPE ZS4H084T05-RTDATE,       " 반납일
+       END OF GS_POPUP,
+       GT_POPUP LIKE TABLE OF GS_POPUP.
+
+
+DATA : S_BNAME     TYPE ZS4H084T02-BNAME,
+       S_AUTHOR    TYPE ZS4H084T02-AUTHOR,
+       S_PUBLISHER TYPE ZS4H084T02-PUBLISHER.
+
+DATA GV_ID TYPE ZS4H084T04-CUST_ID.
+
+
+
+DATA OK_CODE TYPE SY-UCOMM.
+DATA : GO_CONTAINER  TYPE REF TO CL_GUI_DOCKING_CONTAINER,
+       GO_ALV_GRID   TYPE REF TO CL_GUI_ALV_GRID,
+       GS_LAYOUT     TYPE LVC_S_LAYO,
+       GS_FCAT       TYPE LVC_S_FCAT,
+       GT_FCAT       TYPE LVC_T_FCAT,
+       GS_VARIANT    TYPE DISVARIANT,
+       GV_SAVE       TYPE C,
+       GS_SCOL       LIKE LINE OF GS_DISPLAY-GT_SCOL,
+       GO_CONTAINER2 TYPE REF TO CL_GUI_CUSTOM_CONTAINER,
+       GO_ALV_GRID2  TYPE REF TO CL_GUI_ALV_GRID,
+       GS_LAYOUT2    TYPE LVC_S_LAYO,
+       GS_FCAT2      TYPE LVC_S_FCAT,
+       GT_FCAT2      TYPE LVC_T_FCAT.

@@ -1,0 +1,61 @@
+*---------------------------------------------------------------------*
+*    view related data declarations
+*---------------------------------------------------------------------*
+*...processing: ZS4H084V01......................................*
+TABLES: ZS4H084V01, *ZS4H084V01. "view work areas
+CONTROLS: TCTRL_ZS4H084V01
+TYPE TABLEVIEW USING SCREEN '0001'.
+DATA: BEGIN OF STATUS_ZS4H084V01. "state vector
+          INCLUDE STRUCTURE VIMSTATUS.
+DATA: END OF STATUS_ZS4H084V01.
+* Table for entries selected to show on screen
+DATA: BEGIN OF ZS4H084V01_EXTRACT OCCURS 0010.
+INCLUDE STRUCTURE ZS4H084V01.
+          INCLUDE STRUCTURE VIMFLAGTAB.
+DATA: END OF ZS4H084V01_EXTRACT.
+* Table for all entries loaded from database
+DATA: BEGIN OF ZS4H084V01_TOTAL OCCURS 0010.
+INCLUDE STRUCTURE ZS4H084V01.
+          INCLUDE STRUCTURE VIMFLAGTAB.
+DATA: END OF ZS4H084V01_TOTAL.
+
+*...processing: ZS4H084V02......................................*
+TABLES: ZS4H084V02, *ZS4H084V02. "view work areas
+CONTROLS: TCTRL_ZS4H084V02
+TYPE TABLEVIEW USING SCREEN '0002'.
+DATA: BEGIN OF STATUS_ZS4H084V02. "state vector
+          INCLUDE STRUCTURE VIMSTATUS.
+DATA: END OF STATUS_ZS4H084V02.
+* Table for entries selected to show on screen
+DATA: BEGIN OF ZS4H084V02_EXTRACT OCCURS 0010.
+INCLUDE STRUCTURE ZS4H084V02.
+          INCLUDE STRUCTURE VIMFLAGTAB.
+DATA: END OF ZS4H084V02_EXTRACT.
+* Table for all entries loaded from database
+DATA: BEGIN OF ZS4H084V02_TOTAL OCCURS 0010.
+INCLUDE STRUCTURE ZS4H084V02.
+          INCLUDE STRUCTURE VIMFLAGTAB.
+DATA: END OF ZS4H084V02_TOTAL.
+
+*...processing: ZS4H084V03......................................*
+TABLES: ZS4H084V03, *ZS4H084V03. "view work areas
+CONTROLS: TCTRL_ZS4H084V03
+TYPE TABLEVIEW USING SCREEN '0003'.
+DATA: BEGIN OF STATUS_ZS4H084V03. "state vector
+          INCLUDE STRUCTURE VIMSTATUS.
+DATA: END OF STATUS_ZS4H084V03.
+* Table for entries selected to show on screen
+DATA: BEGIN OF ZS4H084V03_EXTRACT OCCURS 0010.
+INCLUDE STRUCTURE ZS4H084V03.
+          INCLUDE STRUCTURE VIMFLAGTAB.
+DATA: END OF ZS4H084V03_EXTRACT.
+* Table for all entries loaded from database
+DATA: BEGIN OF ZS4H084V03_TOTAL OCCURS 0010.
+INCLUDE STRUCTURE ZS4H084V03.
+          INCLUDE STRUCTURE VIMFLAGTAB.
+DATA: END OF ZS4H084V03_TOTAL.
+
+*.........table declarations:.................................*
+TABLES: ZS4H084T01                     .
+TABLES: ZS4H084T02                     .
+TABLES: ZS4H084T03                     .

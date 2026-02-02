@@ -1,0 +1,4 @@
+@EndUserText.label: 'PO 조회 Service'
+define service ZS4H084_I01_SRV {
+  expose ZS4H084_I01;
+}
